@@ -8,7 +8,24 @@ for (let i = 0; i < 100; i++) {
 
 // You may write your code here!
 
-// CREATES AN ARRAY OF ALL THE COLORS
-const allColors = document.querySelectorAll(".color");
+  // RETURNS THE CURRENT COLOR
 const currentColor = document.querySelector("#current-color");
 
+// DISPLAYS THE CURRENT COLOR TO MATCH THE BACKGROUND COLOR CHOSEN FROM THE PALETTE
+const paletteColors = document.querySelectorAll("#palette .color")
+paletteColors.forEach((color)=> {
+  color.addEventListener("click", (event) => {
+    currentColor.setAttribute("style", `background: ${color.style.background}`);
+  });
+})
+
+// PIXELS CANVAS
+
+const cells = document.querySelectorAll(".cell");
+
+// DISPLAY COLOR IN THE CELL TO MATCH BACKGROUND OF CURRENT COLOR
+cells.forEach((cell)=> {
+  cell.addEventListener("click", (event)=> {
+    cell.setAttribute("style", `background: ${currentColor.style.background}`);
+  });
+});
