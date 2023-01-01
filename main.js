@@ -7,3 +7,8 @@ for (let i = 0; i < 100; i++) {
 }
 
 // You may write your code here!
+
+// CREATES AN ARRAY OF ALL THE COLORS
+const allColors = document.querySelectorAll(".color");
+const currentColor = document.querySelector("#current-color");
+
